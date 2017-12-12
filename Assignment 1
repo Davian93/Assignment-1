@@ -1,0 +1,25 @@
+Public Class Form1                    'Creates the class for the project
+Dim con As New ADODB.Connection       'Creates an ADO object
+Dim rs As New ADODB.Recordset         'Specifies the object model
+Dim str As String                     '
+Dim confirm As Integer                '
+
+Private Sub Form_Load()               'Creates a private form within the class that controls all toolbox controls used.
+con.Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Database Folder\ProfileDB.mdb;Persist Security Info=False" 'Allows access to the database file stored
+rs.Open "Select * from ProfileTBL", con, adOpenDynamic, adLockPessimistic  'Opens the Table that is stored in the database being access by the program
+
+ComboBoxDept.Items.Add("Computer Science")                'Adds Computer Science to the droplist in the combo box for department
+ComboBoxDept.Items.Add("Electrical Engineering")          'Adds Electrical Engineering to the droplist in the combo box for department
+ComboBoxDept.Items.Add("Civil Engineering")               'Adds Civil Engineering to the droplist in the combo box for department
+ComboBoxCourse.Items.Add("SEMESTER-I")                    'Adds Semester-I to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-II")                   'Adds Semester-II to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-III")                  'Adds Semester-III to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-IV")                   'Adds Semester-IV to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-V")                    'Adds Semester-V to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-VI")                   'Adds Semester-VI to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-VII")                  'Adds Semester-VII to the droplist in the combo box for courses
+ComboBoxCourse.Items.Add("SEMESTER-VIII")                 'Adds Semester-VIII to the droplist in the combo box for courses
+display()                                                 
+End Sub
+
+End Class
